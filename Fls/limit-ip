@@ -10,17 +10,17 @@ TEXT="
 <b>⚠️ NOTIFICATIONS MULTI LOGIN ⚠️</b>
 <code>────────────────────</code>
 <code>Username  : </code><code>$user</code>
-<code>Limit Ip    : </code><code>$data</code>
+<code>Limit Ip    : </code><code>$iplimit</code>
+<code>Login Ip    : </code><code>$cekcek</code>
 <code>────────────────────</code>
 "
 curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 function vmip(){
 #LIMITVMESSIP
-echo -n > /var/log/xray/access.log
-sleep 440
+sleep 10
 data=( `ls /etc/kyt/limit/vmess/ip`);
-#Decrypted By YADDY D PHREAKER
+#Created By Newbie Store
     for user in "${data[@]}"
     do
         iplimit=$(cat /etc/kyt/limit/vmess/ip/$user)
@@ -42,8 +42,7 @@ data=( `ls /etc/kyt/limit/vmess/ip`);
 }
 function vlip(){
 #LIMITVLESSIP
-echo -n > /var/log/xray/access.log
-sleep 440
+sleep 10
 data=( `ls /etc/kyt/limit/vless/ip`);
 #Decrypted By YADDY D PHREAKER
     for user in "${data[@]}"
@@ -67,8 +66,7 @@ data=( `ls /etc/kyt/limit/vless/ip`);
 }
 function trip(){
 #LIMITIPTROJAN
-echo -n > /var/log/xray/access.log
-sleep 440
+sleep 10
 data=( `ls /etc/kyt/limit/trojan/ip`);
 #Decrypted By YADDY D PHREAKER
     for user in "${data[@]}"
