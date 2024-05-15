@@ -63,7 +63,7 @@ for user in ${data[@]}
       if [[ ${Usage} -gt ${checkLimit} ]]; then
     uuid=$(grep -E "^},{" "/etc/xray/config.json" |  grep -i '"'"${user}"'"' | cut -d " " -f 2 | cut -d '"' -f 2 | uniq )
     exp=$(grep -wE "^#! $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-    sed -i '/#trojan$/a\#! '"$user $exp $uuid"'' /etc/xray/lock.db
+    sed -i '/#trojan$/a\#! '"$user $exp $uuid"'' /etc/xray/.lock.db
     sed -i "/^#! $user $exp/,/^},{/d" /etc/xray/config.json
       send-log
       rm -rf /etc/limit/trojan/${user}
